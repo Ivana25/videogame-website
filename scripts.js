@@ -1,7 +1,7 @@
 $("#lookUp").click(function(){
     const gameInput = $("#game").val()
     $.ajax({
-        url: `https://api-endpoint.igdb.com/games/?search=${gameInput}&fields=name,release_dates,summary,rating,screenshots&limit=5`,
+        url: `https://api-endpoint.igdb.com/games/?search=${gameInput}&fields=name,release_dates,summary&limit=5`,
         headers: {
             "user-key": "d2c7cfa12d4f83559bf5685dcba68ba6",
              Accept: "application/json",
@@ -9,10 +9,7 @@ $("#lookUp").click(function(){
     })
         .then(response => {
 
-        //  console.log(response);
         response.forEach(element => {
-            //  console.log(response)
-                // console.log(response)
 
    let title = $("<h3>" + element.name + "<h3>")
    $(document.body).append(title)
@@ -20,24 +17,22 @@ $("#lookUp").click(function(){
 
    let summary = $("<p>"+ element.summary + "<p>")
    $(document.body).append(summary)
-   title.addClass('gameTitle')
-
-   let rating = $("<p>" + element.rating + "<p>")
-   $(document.body).append(rating)
-   title.addClass('gameTitle')
-
-   let pics = $("<p>" + element.screenshots + "<p>")
-   $(document.body).append('screenshots')
-   title.addClass('gameTitle')
-
-  let release_dates = element.release_dates      
-  release_dates.forEach(element => {
-        console.log(element.human)
+   summary.addClass('gameTitle')
+   
+//    let rating = $("<p>" + element.rating + "<p>")
+//    $(document.body).append(rating)
+//    rating.addClass('reviews')
+   
+//    let screenshots = $("<p>" + element.screenshots + "<p>")
+//    $(document.body).append(screenshots)
+//    screenshots.addClass('gameTitle')
+   
+   let release_dates = element.release_dates      
+   release_dates.forEach(element => {
 
    let release_dates = $("<p>" + element.human + "<p>")
    $(document.body).append(release_dates)
-   console.log(element.human)
-   title.addClass('gameTitle')
+   release_dates.addClass('dates')
               })
          })
        
@@ -45,5 +40,5 @@ $("#lookUp").click(function(){
                 alert("This is not a videogame. Please try again.", e);
               })
               
-});
 })
+});

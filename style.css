@@ -39,3 +39,22 @@ body{
     border: 5px solid whitesmoke;
     font-family: cursive;
 }
+
+.reviews{
+    background-color: rgba(34, 51, 235, 0.66);
+    color: yellow;
+    border: 5px solid whitesmoke;
+    font-family: cursive;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+.dates{
+    background-color: rgba(34, 51, 235, 0.66);
+    color: yellow;
+    border: 5px solid whitesmoke;
+    font-family: cursive;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
