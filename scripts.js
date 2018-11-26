@@ -26,19 +26,19 @@ $("#lookUp").click(function(){
 //    let screenshots = $("<p>" + element.screenshots + "<p>")
 //    $(document.body).append(screenshots)
 //    screenshots.addClass('gameTitle')
-   
+
    let release_dates = element.release_dates      
    release_dates.forEach(element => {
 
    let release_dates = $("<p>" + element.human + "<p>")
    $(document.body).append(release_dates)
    release_dates.addClass('dates')
-              })
+              });
          })
        
               .catch(e => {
                 alert("This is not a videogame. Please try again.", e);
-              })
+              });
               
-})
+});
 });
